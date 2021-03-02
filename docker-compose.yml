@@ -1,0 +1,29 @@
+#
+## This file included for local testing; not recomended for production use.
+#
+
+version: '3.3'
+services:
+
+
+  httpd:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    volumes:
+      - /usr/local/docker-config/httpd/psamaui/settings/:/usr/local/apache2/htdocs/psamaui/settings/
+      - /usr/local/docker-config/httpd/picsureui/settings/:/usr/local/apache2/htdocs/picsureui/settings/
+      - /usr/local/docker-config/httpd/cert:/usr/local/apache2/cert
+      - /usr/local/docker-config/httpd/static:/usr/local/apache2/htdocs/static
+      - /usr/local/docker-config/httpd/static:/usr/local/apache2/htdocs/picsureui/static
+    networks:
+      - pic-sure-hpds-phenotype-load-example_public
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+
+networks:
+  pic-sure-hpds-phenotype-load-example_public:
+    external: true
+
