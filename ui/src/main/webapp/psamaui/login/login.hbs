@@ -3,6 +3,11 @@
 
 </style>
   <div id='frmAuth0Login'></div>
+    var oauth = {
+      client_id : '{{clientId}}',
+      domain : '{{auth0Subdomain}}.auth0.com',
+      callbackURL : '{{callbackURL}}'
+    };
   <script> 
 var auth0require = require.config({
     "context": "auth0",
