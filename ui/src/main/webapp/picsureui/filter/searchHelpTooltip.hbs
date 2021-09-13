@@ -1,0 +1,27 @@
+<div class="modal" id="search-help-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Instructions</h4>
+            </div>
+      <div class="modal-body">
+      	<h2>Welcome to the PIC-SURE UI!</h2>
+      	<p>This app is intended to work as closely as possible to your favorite search engine. You can enter any search term and we will present you with a series of results that can be used to filter subsets of the data. There are many phenotypes in the system, try entering "asthma" and press enter. You will find several tabs of search results.</p>
+
+      	<p>When you select a search result, you will be presented with options to filter your subset using this phenotype or variant INFO column. Phenotype filters apply to study participants directly. If you filter by age less than 50, you will only have participants included in your participants counts and export data that match that filter. Variant INFO columns apply to variants that are used to filter patients. In order for a participants to be included, it must match ALL of the Phenotype filters that you have created as well as have at least one variant that matches ALL of your variant INFO filters.</p>
+
+		<p>Once you have are satisfied with your query, you can click the "Request Data" button to bring up a Google Form that will allow authorization for data access.</p>
+      	
+      	<p>There is a full listing and explanation of the Variant Info columns below, if any are present.</p>
+      	<br>
+        <div>
+        	{{#each infoColumns}}<div class="row"><span class="col-md-4">{{key}}</span><span class="col-md-8">{{description}}</span></div><br>{{/each}}</p>
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary close">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
