@@ -16,5 +16,7 @@
 	},
   "queryExportType":"EXPORT_DISABLED",
   "categorySearchResultList" : [
-             ]
+             ],
+  "customizeAuth0Login": true,
+  "client_id": "ThisIsDefinedAheadOfTimeBySomeoneElse"
 }
